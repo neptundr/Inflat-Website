@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Zap, Shield, Heart, Bell, Sparkles, DollarSign} from "lucide-react";
+import { Zap, Shield, Heart, Bell, Sparkles, DollarSign } from "lucide-react";
 
 type FeatureProps = {
     icon: React.ElementType
@@ -34,9 +34,22 @@ function FeatureItem({ feature, index } : FeatureItemProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, delay: index * 0.06 }}
-            className="group flex gap-4 p-5 rounded-xl transition-all duration-250 hover:bg-primary/5 cursor-default"
-            style={{ border: "1px solid transparent" }}
+            className="group relative flex gap-4 py-3 lg:p-5 rounded-2xl transition-all duration-250 hover:bg-accent/10 outline outline-0 outline-transparent hover:outline-1 hover:outline-accent cursor-default"
         >
+            {/* Hover glow overlay */}
+            <div
+                className="absolute inset-0 rounded-2xl opacity-0 bg-gradient-radial group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                    // background: `radial-gradient(circle at 40% 0%, rgba(186,255,78,0.05), transparent 70%)`,
+                    boxShadow: "0 0 40px rgba(186,255,78,0.25) inset",
+                }}
+            />
+            {/* Border glow on hover */}
+            <div
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ border: "1px solid rgba(186,255,78,0.42)" }}
+            />
+
             <div
                 className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-complimentary/10 transition-all duration-250 group-hover:scale-110"
                 style={{
@@ -50,7 +63,7 @@ function FeatureItem({ feature, index } : FeatureItemProps) {
                 <h4 className="text-lg font-semibold text-white/75 tracking-tight group-hover:text-white transition-colors duration-250">
                     {feature.title}
                 </h4>
-                <p className="mt-1 text-sm text-white/50 leading-relaxed font-light">{feature.desc}</p>
+                <p className="mt-1 text-sm font-normal text-white/50 group-hover:text-white/75 leading-relaxed">{feature.desc}</p>
             </div>
         </motion.div>
     );
@@ -66,7 +79,7 @@ export default function FeaturesSection() {
                  style={{ background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.12), transparent)" }} />
 
             <div className="max-w-7xl mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div className="grid lg:grid-cols-[38%_59%] gap-16 items-start">
                     {/* Left sticky */}
                     <motion.div
                         ref={leftRef}
@@ -75,8 +88,8 @@ export default function FeaturesSection() {
                         transition={{ duration: 0.5 }}
                         className="lg:sticky lg:top-28"
                     >
-                        <span className="text-xs tracking-[0.3em] uppercase font-medium text-accent/80">
-                          Features
+                        <span className="text-xs tracking-[0.3em] uppercase font-mono text-accent/80">
+                            Features
                         </span>
                         <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
                             Built for the way
@@ -88,7 +101,7 @@ export default function FeaturesSection() {
                                 you search
                             </span>
                         </h2>
-                        <p className="mt-6 text-sm text-white/28 leading-relaxed max-w-sm font-light">
+                        <p className="mt-6 text-sm text-white/28 leading-relaxed lg:max-w-sm font-light">
                             Every feature in InFlat is designed to remove friction from your rental search –
                             so you can focus on finding the place that feels like home.
                         </p>
@@ -107,14 +120,14 @@ export default function FeaturesSection() {
                                     >
                                         {value}
                                     </div>
-                                    <div className="text-xs text-white/25 mt-1">{label}</div>
+                                    <div className="text-sm font-normal text-white/50 mt-1">{label}</div>
                                 </div>
                             ))}
                         </div>
                     </motion.div>
 
                     {/* Right features */}
-                    <div className="grid sm:grid-cols-2 gap-1">
+                    <div className="grid sm:grid-cols-2 gap-1 gap-x-4">
                         {features.map((f, i) => (
                             <FeatureItem key={f.title} feature={f} index={i} />
                         ))}

@@ -53,7 +53,7 @@ export default function Header() {
                         <button
                             key={item.id}
                             onClick={() => scrollTo(item.id)}
-                            className="text-sm text-white/45 hover:text-white transition-colors duration-200 tracking-wide"
+                            className="text-sm text-white/50 hover:text-white font-semibold transition-colors duration-200 tracking-wide"
                         >
                             {item.label}
                         </button>
@@ -82,7 +82,7 @@ export default function Header() {
                         <button
                             key={item.id}
                             onClick={() => scrollTo(item.id)}
-                            className="block w-full text-left py-3 text-white/60 hover:text-white text-sm border-b border-white/5 transition-colors"
+                            className="block w-full text-left py-3 text-white/60 hover:text-white text-sm font-semibold border-b border-white/5 transition-colors"
                         >
                             {item.label}
                         </button>

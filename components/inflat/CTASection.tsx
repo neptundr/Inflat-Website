@@ -33,8 +33,8 @@ export default function CTASection() {
                     />
 
                     <div className="relative z-10">
-                        <span className="inline-block text-xs tracking-[0.3em] uppercase font-medium mb-6 text-accent/80">
-                          Ready to find home?
+                        <span className="inline-block text-xs tracking-[0.3em] uppercase font-mono mb-6 text-accent/80">
+                          Are you ready?
                         </span>
 
                         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.02]">

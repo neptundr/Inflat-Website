@@ -33,7 +33,7 @@ export default function HeroSection() {
                     initial={{opacity: 0, y: 24}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.6, delay: 0.1}}
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95]"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-title font-extrabold tracking-tight leading-[0.95]"
                 >
                     <span className="text-white">Swipe.</span>
                     <br/>
@@ -52,7 +52,7 @@ export default function HeroSection() {
                     initial={{opacity: 0, y: 16}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.5, delay: 0.25}}
-                    className="mt-8 text-base sm:text-lg text-white/35 max-w-md mx-auto leading-relaxed font-light"
+                    className="mt-8 text-base sm:text-lg text-white/40 max-w-md mx-auto leading-relaxed font-semibold"
                 >
                     {"Finding your next home shouldn't feel like a job."}
                     <br/>
@@ -72,7 +72,7 @@ export default function HeroSection() {
                             e.preventDefault();
                             document.getElementById("get-started")?.scrollIntoView({behavior: "smooth"});
                         }}
-                        className="group px-8 py-3.5 rounded-full font-semibold bg-primary text-sm text-black tracking-wide transition-all duration-200 hover:scale-105"
+                        className="group px-8 py-3.5 rounded-full font-normal bg-primary text-sm text-black tracking-wide transition-all duration-200 hover:scale-105"
                         style={{
                             // background: "linear-gradient(135deg, #BAFF4E, #8FD920)",
                             // color: "#FFFFFF",

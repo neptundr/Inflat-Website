@@ -66,7 +66,7 @@ function StepCard({ step, index} : {step: StepProps ; index: number }) {
                 style={{ border: "1px solid rgba(186,255,78,0.12)" }}
             />
 
-            <span className="text-xs font-mono tracking-widest text-white/15 uppercase">Step {step.number}</span>
+            <span className="text-xs font-mono tracking-widest text-white/30 uppercase">Step {step.number}</span>
 
             <div
                 className="mt-6 w-11 h-11 rounded-xl flex bg-primary/7 border-primary/12 items-center justify-center transition-all duration-300 group-hover:scale-110"
@@ -110,17 +110,17 @@ export default function HowItWorksSection() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-          <span className="text-xs tracking-[0.3em] uppercase font-medium text-accent/80">
-            How it works
-          </span>
+                    <span className="text-xs tracking-[0.3em] uppercase font-mono text-accent/80">
+                        How it works
+                    </span>
                     <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
                         <span className="text-white">Three steps to your </span>
                         <span
-                            className="bg-clip-text text-transparent bg-gradient-primary"
+                            className="bg-clip-text text-transparent bg-gradient-primary whitespace-nowrap"
                             // style={{ backgroundImage: "linear-gradient(135deg, #BAFF4E, #60D945)" }}
                         >
-              new home
-            </span>
+                            new home
+                        </span>
                     </h2>
                 </motion.div>
 

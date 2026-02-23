@@ -32,6 +32,17 @@ export default {
                 'glow-accent': '0 0 30px rgb(var(--color-accent-rgb), var(--color-primary-rgb) / 0.6)',
                 'glow-soft': '0 0 60px rgb(var(--color-primary-rgb) / 0.35)',
             },
+            fontFamily: {
+                thin: ["var(--font-TT)", "system-ui", "sans-serif"],
+                'extra-light': ["var(--font-TT)", "system-ui", "sans-serif"],
+                normal: ["var(--font-TT)", "system-ui", "sans-serif"],
+                medium: ["var(--font-TT)", "system-ui", "sans-serif"],
+                extrabold: ["var(--font-TT)", "system-ui", "sans-serif"],
+                semibold: ["var(--font-TT)", "system-ui", "sans-serif"],
+                bold: ["var(--font-TT)", "system-ui", "sans-serif"],
+                light: ["var(--font-TT)", "system-ui", "sans-serif"],
+                mono: ["var(--font-TT-mono)", "system-ui", "sans-serif"],
+            },
         },
     },
 };
