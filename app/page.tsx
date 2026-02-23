@@ -11,7 +11,7 @@ export default function Home() {
         <div
             className="min-h-screen"
             style={{
-                background: "#010A14",
+                background: "#010801",
                 color: "#E8E8F0",
             }}
         >

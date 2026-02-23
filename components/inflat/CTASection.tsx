@@ -9,7 +9,7 @@ export default function CTASection() {
     const inView = useInView(ref, {once: true, margin: "-80px"});
 
     return (
-        <section id="get-started" className="relative sm:px-10 py-32 sm:py-40">
+        <section id="get-started" className="relative sm:px-10 py-32 sm:pt-40">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px"
                  style={{background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.12), transparent)"}}/>
 
@@ -48,25 +48,25 @@ export default function CTASection() {
                             </span>
                         </h2>
 
-                        <p className="mt-8 text-base text-white/30 max-w-lg mx-auto leading-relaxed font-light">
+                        <p className="mt-8 text-base text-white/50 max-w-lg mx-auto leading-relaxed font-light">
                             Join thousands of people who found their perfect rental through InFlat.
-                            {"\nDownload the app and start swiping today – it's free."}
+                            {"\nOpen the Telegram bot and start swiping today – it's free."}
                         </p>
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
                             <a
-                                href="https://example.com/download"
+                                href="https://t.me/InFlat_HK_bot"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gradient-primary shadow-glow-primary rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-105"
+                                className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gradient-primary shadow-glow-primary rounded-full font-semibold text-md tracking-wide transition-all duration-200 hover:scale-105"
                                 style={{
                                     // background: "linear-gradient(135deg, #BAFF4E, #8FD920)",
                                     color: "#08080D",
                                     // boxShadow: "0 0 40px rgba(186,255,78,0.3)",
                                 }}
                             >
-                                <span>Download InFlat</span>
+                                <span className={"pl-2"}>Open InFlat</span>
                                 <ArrowRight size={16}
                                             className="transition-transform duration-200 group-hover:translate-x-1"/>
                                 <div
@@ -75,22 +75,22 @@ export default function CTASection() {
                                 />
                             </a>
 
-                            <a
-                                href="https://example.com/web"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm text-white/35 hover:text-white/70 border border-white/8 hover:border-[#BAFF4E]/25 hover:shadow-[0_0_20px_rgba(186,255,78,0.08)] transition-all duration-200 tracking-wide"
-                            >
-                                Try on web
-                            </a>
+                            {/*<a*/}
+                            {/*    href="https://example.com/web"*/}
+                            {/*    target="_blank"*/}
+                            {/*    rel="noopener noreferrer"*/}
+                            {/*    className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm text-white/35 hover:text-white/70 border border-white/8 hover:border-[#BAFF4E]/25 hover:shadow-[0_0_20px_rgba(186,255,78,0.08)] transition-all duration-200 tracking-wide"*/}
+                            {/*>*/}
+                            {/*    Try on web*/}
+                            {/*</a>*/}
                         </div>
 
                         {/* Trust badges */}
                         <div
-                            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-12 text-white/15 text-xs">
-                            <span>★★★★★ 4.9 on App Store</span>
+                            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-12 text-white/25 text-sm font-normal">
+                            <span>★★★★★ 4.6 on TrustPilot </span>
                             <span className="w-px h-3 bg-white/10 hidden sm:block"/>
-                            <span>100K+ downloads</span>
+                            <span>5K+ active users</span>
                             <span className="w-px h-3 bg-white/10 hidden sm:block"/>
                             <span>Free to use</span>
                         </div>

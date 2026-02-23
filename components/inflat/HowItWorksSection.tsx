@@ -24,14 +24,14 @@ const steps: StepProps[] = [
         number: "02",
         icon: ArrowLeftRight,
         title: "Swipe through listings",
-        description: "Like what you see? Swipe right. Not your style? Swipe left. Our algorithm learns and improves every time.",
+        description: "Love what you see? Hit a like. Not your style? Move on. Our algorithm learns and improves every time.",
         // accent: "#60D945",
     },
     {
         number: "03",
         icon: KeyRound,
         title: "Move in",
-        description: "Matched with your dream place? Contact the landlord and sign your lease – all within the app.",
+        description: "Matched with your dream place? Contact the landlord and sign your lease.",
         // accent: "#A8F04E",
     },
 ];
@@ -83,7 +83,7 @@ function StepCard({ step, index} : {step: StepProps ; index: number }) {
             >
                 {step.title}
             </h3>
-            <p className="mt-3 text-sm text-white/30 leading-relaxed font-light">{step.description}</p>
+            <p className="mt-3 text-sm text-white/50 leading-relaxed font-light">{step.description}</p>
 
             <div
                 className="absolute bottom-0 left-8 right-8 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"

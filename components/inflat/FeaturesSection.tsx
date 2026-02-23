@@ -18,7 +18,7 @@ type FeatureItemProps = {
 const features: FeatureProps[] = [
     { icon: Zap, title: "Instant results", desc: "New listings appear in your feed within minutes of being posted." },
     { icon: Shield, title: "Verified listings", desc: "Every property is verified by our team – no scams, no surprises." },
-    { icon: Sparkles, title: "Flat insights", desc: "Parking, pets, perfect views – all in one glance." },
+    { icon: Sparkles, title: "House insights", desc: "Parking, pets, perfect views – all in one glance." },
     { icon: Heart, title: "Intelligent matching", desc: "Our algorithm learns your taste and surfaces better matches over time." },
     { icon: Bell, title: "Real-time alerts", desc: "Get notified the moment a listing matches your criteria." },
     { icon: DollarSign, title: "Money-smart picks", desc: "We balance your preferences and your wallet in every search." },
@@ -34,7 +34,7 @@ function FeatureItem({ feature, index } : FeatureItemProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, delay: index * 0.06 }}
-            className="group relative flex gap-4 py-3 lg:p-5 rounded-2xl transition-all duration-250 hover:bg-accent/10 outline outline-0 outline-transparent hover:outline-1 hover:outline-accent cursor-default"
+            className="group relative flex gap-4 p-3 lg:p-5 rounded-2xl transition-all duration-250 hover:bg-accent/10 outline outline-0 outline-transparent hover:outline-1 hover:outline-accent cursor-default"
         >
             {/* Hover glow overlay */}
             <div
@@ -78,7 +78,7 @@ export default function FeaturesSection() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px"
                  style={{ background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.12), transparent)" }} />
 
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-[38%_59%] gap-16 items-start">
                     {/* Left sticky */}
                     <motion.div
@@ -86,7 +86,7 @@ export default function FeaturesSection() {
                         initial={{ opacity: 0, y: 24 }}
                         animate={leftInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.5 }}
-                        className="lg:sticky lg:top-28"
+                        className="px-6 lg:top-28"
                     >
                         <span className="text-xs tracking-[0.3em] uppercase font-mono text-accent/80">
                             Features
@@ -127,7 +127,7 @@ export default function FeaturesSection() {
                     </motion.div>
 
                     {/* Right features */}
-                    <div className="grid sm:grid-cols-2 gap-1 gap-x-4">
+                    <div className="grid sm:grid-cols-2 gap-1 gap-x-4 px-2.5">
                         {features.map((f, i) => (
                             <FeatureItem key={f.title} feature={f} index={i} />
                         ))}

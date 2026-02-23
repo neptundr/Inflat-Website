@@ -1,9 +1,11 @@
 "use client"
 
-import React from "react";
+import React, {useRef, useState} from "react";
 import {motion} from "framer-motion";
 
 export default function HeroSection() {
+    const [btnHovered, setBtnHovered] = useState(false);
+
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
             {/* Static background glow — no animation, no lag */}
@@ -33,9 +35,9 @@ export default function HeroSection() {
                     initial={{opacity: 0, y: 24}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.6, delay: 0.1}}
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-title font-extrabold tracking-tight leading-[0.95]"
+                    className="text-7xl sm:text-6xl md:text-7xl lg:text-8xl font-title font-extrabold tracking-tight leading-[0.95]"
                 >
-                    <span className="text-white">Swipe.</span>
+                    <span className={`text-white mb-10 transition-all duration-300`}>Swipe.</span>
                     <br/>
                     <span
                         className="bg-clip-text text-transparent bg-gradient-primary-complex"
@@ -44,26 +46,14 @@ export default function HeroSection() {
                         Match.
                     </span>
                     <br/>
-                    <span className="text-white">Move in.</span>
+                    <span className={`text-white transition-all duration-300`}>Move in.</span>
                 </motion.h1>
-
-                {/* Subtitle */}
-                <motion.p
-                    initial={{opacity: 0, y: 16}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, delay: 0.25}}
-                    className="mt-8 text-base sm:text-lg text-white/40 max-w-md mx-auto leading-relaxed font-semibold"
-                >
-                    {"Finding your next home shouldn't feel like a job."}
-                    <br/>
-                    InFlat makes rental search as intuitive as swiping right.
-                </motion.p>
 
                 {/* CTA buttons */}
                 <motion.div
                     initial={{opacity: 0, y: 16}}
                     animate={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, delay: 0.4}}
+                    transition={{duration: 0.5, delay: 0.25}}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
                 >
                     <a
@@ -72,29 +62,57 @@ export default function HeroSection() {
                             e.preventDefault();
                             document.getElementById("get-started")?.scrollIntoView({behavior: "smooth"});
                         }}
-                        className="group px-8 py-3.5 rounded-full font-normal bg-primary text-sm text-black tracking-wide transition-all duration-200 hover:scale-105"
+                        className={`group relative px-9 py-4 hover:my-4 rounded-full 
+                                    bg-primary hover:bg-accent
+                                    font-extrabold  text-black 
+                                    border-4 border-accent 
+                                    text-4xl sm:text-5xl md:text-6xl lg:text-7xl sm:hover:text-6xl md:hover:text-7xl lg:hover:text-7xl 
+                                    tracking-wide transition-all duration-300 whitespace-nowrap
+                                    shadow-glow-primary hover:shadow-glow-primary-extended`}
                         style={{
                             // background: "linear-gradient(135deg, #BAFF4E, #8FD920)",
                             // color: "#FFFFFF",
-                            boxShadow: "0 0 30px var(--color-primary)",
+                            // boxShadow: "0 0 30px var(--color-accent)",
                         }}
+                        onMouseEnter={() => setBtnHovered(true)}
+                        onMouseLeave={() => setBtnHovered(false)}
                     >
+                        {/* Hover glow overlay */}
+                        <div
+                            className="absolute inset-0 rounded-full bg-gradient-radial opacity-100 group-hover:opacity-100 transition-opacity duration-300"
+                            style={{
+                                // background: `radial-gradient(circle at 40% 0%, rgba(186,255,78,0.05), transparent 70%)`,
+                                boxShadow: "0 0 40px rgba(186,255,78,0.25) inset",
+                            }}
+                        />
+                        {/* Border glow on hover */}
+                        <div
+                            className="absolute inset-0 rounded-full opacity-100 group-hover:opacity-100 transition-opacity duration-300"
+                            style={{ border: "1px solid rgba(186,255,78,0.42)" }}
+                        />
                         Start swiping
                     </a>
-                    <a
-                        href="#how-it-works"
-                        onClick={e => {
-                            e.preventDefault();
-                            document.getElementById("how-it-works")?.scrollIntoView({behavior: "smooth"});
-                        }}
-                        className="px-8 py-3.5 rounded-full text-sm text-white/45 hover:text-white border border-white/10 hover:border-primary/30 shadow hover:shadow-glow-primary transition-all duration-200 tracking-wide"
-                    >
-                        See how it works
-                    </a>
+                    {/*<a*/}
+                    {/*    href="#how-it-works"*/}
+                    {/*    onClick={e => {*/}
+                    {/*        e.preventDefault();*/}
+                    {/*        document.getElementById("how-it-works")?.scrollIntoView({behavior: "smooth"});*/}
+                    {/*    }}*/}
+                    {/*    className="px-8 py-3.5 rounded-full text-sm text-white/45 hover:text-white border border-white/10 hover:border-primary/30 shadow hover:shadow-glow-primary transition-all duration-200 tracking-wide"*/}
+                    {/*>*/}
+                    {/*    See how it works*/}
+                    {/*</a>*/}
                 </motion.div>
 
-                {/* Scroll indicator */}
-
+                {/* Subtitle */}
+                <motion.p
+                    initial={{opacity: 0, y: 16}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{duration: 0.5, delay: 0.4}}
+                    className="mt-10 text-base sm:text-lg text-white/40 max-w-md mx-auto leading-relaxed font-normal"
+                >
+                    Your dream home, in seconds
+                </motion.p>
             </div>
             <motion.div
                 initial={{opacity: 0}}
@@ -102,7 +120,7 @@ export default function HeroSection() {
                 transition={{delay: 1.2, duration: 0.6}}
                 className="pt-11 -mb-16 flex flex-col items-center gap-2"
             >
-                <span className="text-xs text-white/20 tracking-widest uppercase">Scroll</span>
+                <span className="text-xs text-white/20 tracking-widest font-mono uppercase">Scroll</span>
                 <div className="w-px h-10 bg-gradient-to-b from-white/20 to-transparent"/>
             </motion.div>
         </section>
