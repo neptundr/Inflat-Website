@@ -5,18 +5,58 @@ import {motion} from "framer-motion";
 
 export default function HeroSection() {
     const [btnHovered, setBtnHovered] = useState(false);
+    const [mouseInSection, setMouseInSection] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        const rect = ref.current!.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        ref.current!.style.setProperty("--x", `${x}px`);
+        ref.current!.style.setProperty("--y", `${y}px`);
+    };
+
+    const handleMouseLeave = () => {
+        // ref.current!.style.setProperty("--x", `50%`);
+        // ref.current!.style.setProperty("--y", `50%`);
+
+        setMouseInSection(false);
+    };
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
-            {/* Static background glow — no animation, no lag */}
+        <section
+            ref={ref}
+            onMouseEnter={() => setMouseInSection(true)}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="group relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16"
+        >
+            {/* glow layer */}
+            <div className={`pointer-events-none absolute inset-0 glow-layer transition-opacity duration-500 opacity-0 group-hover:opacity-100`}/>
+
             <div
-                className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+                className="absolute inset-0 z-9 bg-white opacity-5"
+            />
+            <div
+                className="absolute inset-0 z-10"
                 style={{
-                    background: "radial-gradient(circle, rgba(186,255,78,0.07) 0%, transparent 65%)",
+                    backgroundImage: "url(/textures/HK.png)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center bottom",
+                    backgroundSize: "auto 100%",
+                    filter: "brightness(0%)",
                 }}
             />
 
-            <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div
+                className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+                style={{
+                    background: "radial-gradient(circle, rgba(186,255,78,0.17) 0%, transparent 65%)",
+                }}
+            />
+
+            <div className="relative z-20 max-w-4xl mx-auto px-6 text-center">
                 {/* Badge */}
                 {/*<motion.div*/}
                 {/*    initial={{opacity: 0, y: 16}}*/}
@@ -88,7 +128,7 @@ export default function HeroSection() {
                         {/* Border glow on hover */}
                         <div
                             className="absolute inset-0 rounded-full opacity-100 group-hover:opacity-100 transition-opacity duration-300"
-                            style={{ border: "1px solid rgba(186,255,78,0.42)" }}
+                            style={{border: "1px solid rgba(186,255,78,0.42)"}}
                         />
                         Start swiping
                     </a>
@@ -118,7 +158,7 @@ export default function HeroSection() {
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
                 transition={{delay: 1.2, duration: 0.6}}
-                className="pt-11 -mb-16 flex flex-col items-center gap-2"
+                className="pt-11 -mb-16 z-30 flex flex-col items-center gap-2"
             >
                 <span className="text-xs text-white/20 tracking-widest font-mono uppercase">Scroll</span>
                 <div className="w-px h-10 bg-gradient-to-b from-white/20 to-transparent"/>
