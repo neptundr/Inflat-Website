@@ -15,9 +15,23 @@ export default function Header() {
     }, [])
 
     const scrollTo = (id: string) => {
-        setMobileOpen(false)
         const el = document.getElementById(id)
-        if (el) el.scrollIntoView({behavior: "smooth"})
+        if (!el) return
+
+        // Close menu first
+        setMobileOpen(false)
+
+        // Wait for menu + overflow unlock to finish
+        setTimeout(() => {
+            // const headerOffset = 80 // your header height (h-20 = 80px)
+            const elementPosition = el.getBoundingClientRect().top + window.pageYOffset
+            const offsetPosition = elementPosition
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            })
+        }, 50)
     }
 
     const navItems = [
