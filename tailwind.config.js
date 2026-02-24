@@ -1,5 +1,6 @@
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     content: [
         "./app/**/*.{js,ts,jsx,tsx}",
@@ -31,7 +32,10 @@ export default {
                 'glow-primary-reduced': '0 0 30px rgb(var(--color-primary-rgb) / 0.4)',
                 'glow-primary': '0 0 30px rgb(var(--color-primary-rgb) / 0.6)',
                 'glow-primary-extended': '0 0 50px rgb(var(--color-primary-rgb) / 0.77)',
-                'glow-accent': '0 0 30px rgb(var(--color-accent-rgb), var(--color-primary-rgb) / 0.6)',
+                'glow-accent': '0 0 30px rgb(var(--color-accent-rgb) / 0.6)',
+                'glow-accent-reduced': '0 0 30px rgb(var(--color-accent-rgb) / 0.4)',
+                'glow-white': '0 0 30px rgb(var(--color-white-rgb) / 0.77)',
+                'glow-white-reduced': '0 0 30px rgb(var(--color-white-rgb) / 0.4)',
                 'glow-soft': '0 0 60px rgb(var(--color-primary-rgb) / 0.35)',
             },
             fontFamily: {

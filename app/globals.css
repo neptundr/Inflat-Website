@@ -12,6 +12,7 @@
   /*--color-accent: #42FFD9;*/
   --color-accent-rgb: 204 255 51;
   /*--color-accent-rgb: 228, 255, 122;*/
+  --color-white-rgb: 204 204 204;
 }
 
 @media (prefers-color-scheme: dark) {

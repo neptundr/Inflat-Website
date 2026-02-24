@@ -19,16 +19,15 @@ export default function CTASection() {
                     initial={{opacity: 0, y: 30}}
                     animate={inView ? {opacity: 1, y: 0} : {}}
                     transition={{duration: 0.6}}
-                    className="relative overflow-hidden rounded-3xl p-10 sm:p-16 md:p-20 text-center"
+                    className="relative overflow-hidden rounded-3xl p-10 sm:p-16 md:p-20 text-center border-2 border-accent"
                     style={{
                         background: "linear-gradient(145deg, rgba(18,22,16,0.95) 0%, rgba(12,14,10,0.98) 100%)",
-                        border: "1px solid rgba(186,255,78,0.1)",
                         boxShadow: "0 0 80px rgba(186,255,78,0.04) inset",
                     }}
                 >
                     {/* Static bg glow */}
                     <div
-                        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] pointer-events-none"
+                        className="absolute top-1/6 left-1/2 -translate-x-1/2 w-[700px] h-[250px] pointer-events-none"
                         style={{background: "radial-gradient(ellipse, rgba(186,255,78,0.07) 0%, transparent 70%)"}}
                     />
 
@@ -38,7 +37,10 @@ export default function CTASection() {
                         </span>
 
                         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.02]">
-                            <span className="text-white">Your next home is</span>
+                            <span className="text-white white">
+                                <span className={"inline-block whitespace-nowrap mr-2 md:mr-3"}> Your next</span>
+                                <span className={"inline-block whitespace-nowrap"}> home is</span>
+                            </span>
                             <br/>
                             <span
                                 className="bg-clip-text text-transparent bg-gradient-primary-complex"
@@ -70,7 +72,7 @@ export default function CTASection() {
                                 <ArrowRight size={16}
                                             className="transition-transform duration-200 group-hover:translate-x-1"/>
                                 <div
-                                    className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-glow-primary"
+                                    className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-glow-accent"
                                     // style={{boxShadow: "0 0 50px rgba(186,255,78,0.5)"}}
                                 />
                             </a>

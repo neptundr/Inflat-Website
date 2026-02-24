@@ -92,10 +92,12 @@ export default function FeaturesSection() {
                             Features
                         </span>
                         <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                            Built for the way
-                            <br />
+                            <span className={"inline-block whitespace-nowrap mr-3"}>
+                                {"Built for the way "}
+                            </span>
+                            {/*<br />*/}
                             <span
-                                className="bg-clip-text text-transparent bg-gradient-primary"
+                                className="inline-block bg-clip-text text-transparent bg-gradient-primary whitespace-nowrap"
                                 // style={{ backgroundImage: "linear-gradient(135deg, #BAFF4E, #60D945)" }}
                             >
                                 you search
