@@ -11,7 +11,7 @@ export default function CTASection() {
     return (
         <section id="get-started" className="relative sm:px-10 py-32 sm:pt-40">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px"
-                 style={{background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.12), transparent)"}}/>
+                 style={{background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.15), transparent)"}}/>
 
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
@@ -56,7 +56,11 @@ export default function CTASection() {
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+                        <motion.div
+                                    initial={{opacity: 0,}}
+                                    animate={inView ? {opacity: 1} : {}}
+                                    transition={{duration: 0.6, delay: 0.4}}
+                                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
                             <a
                                 href="https://t.me/InFlat_HK_bot"
                                 target="_blank"
@@ -85,7 +89,7 @@ export default function CTASection() {
                             {/*>*/}
                             {/*    Try on web*/}
                             {/*</a>*/}
-                        </div>
+                        </motion.div>
 
                         {/* Trust badges */}
                         <div

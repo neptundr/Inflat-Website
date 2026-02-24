@@ -6,13 +6,14 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
-    --color-primary-rgb: 158 240 26;
+    --color-primary-rgb: 184 247 37;
     /*--color-primary: #A1FF42;*/
     --color-complimentary-rgb: 56 176 0;
     /*--color-accent: #42FFD9;*/
-    --color-accent-rgb: 204 255 51;
+    --color-accent-rgb: 232 255 61;
     /*--color-accent-rgb: 228, 255, 122;*/
     --color-white-rgb: 204 204 204;
+    --color-black-rgb: 0 0 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,8 +31,8 @@ body {
 
 .glow-layer {
     background: radial-gradient(
-            320px circle at var(--x, 50%) var(--y, 50%),
-            rgba(186, 255, 78, 0.85),
+            180px circle at var(--x, 50%) var(--y, 50%),
+            rgba(232, 255, 61, 0.9),
             transparent 65%
     );
     opacity: 0;

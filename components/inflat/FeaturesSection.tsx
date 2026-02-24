@@ -31,8 +31,8 @@ function FeatureItem({ feature, index } : FeatureItemProps) {
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={{ y: 20 }}
+            animate={inView ? { y: 0 } : {}}
             transition={{ duration: 0.4, delay: index * 0.06 }}
             className="group relative flex gap-4 p-3 lg:p-5 rounded-2xl transition-all duration-250 hover:bg-accent/10 outline outline-0 outline-transparent hover:outline-1 hover:outline-accent cursor-default"
         >
@@ -76,7 +76,7 @@ export default function FeaturesSection() {
     return (
         <section id="features" className="relative sm:px-10 py-32 sm:py-40">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px"
-                 style={{ background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.12), transparent)" }} />
+                 style={{ background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.15), transparent)" }} />
 
             <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-[38%_59%] gap-16 items-start">

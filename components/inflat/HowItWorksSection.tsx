@@ -48,9 +48,9 @@ function StepCard({step, index}: { step: StepProps; index: number }) {
             className={`group relative ${index == 0 ? "z-10" : index == 1 ? "z-20" : "z-30"}`}
         >
             <motion.div
-                initial={{scale: 0.8, opacity: 0 }}
-                animate={inView ? {scale: 1, opacity: 1 } : {}}
-                transition={{duration: 0.35, delay: 0.2 + index * 0.1}}
+                initial={{scale: 0.6 }}
+                animate={inView ? {scale: 1 } : {}}
+                transition={{duration: 0.25, delay: index * 0.09}}
                 className="absolute -top-14 -ml-10 w-24 h-24 z-30 rounded-2xl flex bg-black group-hover:shadow-glow-white border-primary/20 items-center justify-center
                     group-hover:scale-110
                     outline outline-1 outline-accent/25 group-hover:outline-2 group-hover:outline-white transition-all duration-300"
@@ -59,7 +59,7 @@ function StepCard({step, index}: { step: StepProps; index: number }) {
                     // border: "1px solid rgba(186,255,78,0.12)",
                 }}
             >
-                <step.icon size={32} className="text-primary group-hover:text-white"/>
+                <step.icon size={32} className="text-primary transition-all group-hover:text-white group-hover:scale-110"/>
             </motion.div>
 
             <div
@@ -126,8 +126,8 @@ export default function HowItWorksSection() {
 
     return (
         <section id="how-it-works" className="relative sm:px-10 py-32 sm:py-40">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px"
-                 style={{background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.12), transparent)"}}/>
+            {/*<div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px"*/}
+            {/*     style={{background: "linear-gradient(90deg, transparent, rgba(186,255,78,0.12), transparent)"}}/>*/}
 
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
