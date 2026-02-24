@@ -16,7 +16,6 @@ export default function Header() {
 
     const scrollTo = (id: string) => {
         const el = document.getElementById(id)
-        if (!el) return
 
         // Close menu first
         setMobileOpen(false)
@@ -24,11 +23,10 @@ export default function Header() {
         // Wait for menu + overflow unlock to finish
         setTimeout(() => {
             // const headerOffset = 80 // your header height (h-20 = 80px)
-            const elementPosition = el.getBoundingClientRect().top + window.pageYOffset
-            const offsetPosition = elementPosition
+            const elementPosition = !el? 0: el.getBoundingClientRect().top + window.pageYOffset
 
             window.scrollTo({
-                top: offsetPosition,
+                top: elementPosition,
                 behavior: "smooth",
             })
         }, 50)
@@ -66,7 +64,7 @@ export default function Header() {
                     <button
                         onClick={() => {
                             setMobileOpen(false);
-                            window.scrollTo({top: 0, behavior: "smooth"});
+                            scrollTo("none");
                         }}
                         className="text-white font-bold text-lg tracking-tight cursor-pointer"
                     >
