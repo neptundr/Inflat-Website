@@ -103,7 +103,7 @@ export default function HeroSection() {
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
                 >
                     <a
-                        href="#get-started"
+                        // href="#get-started"
                         onClick={e => {
                             e.preventDefault();
                             document.getElementById("get-started")?.scrollIntoView({behavior: "smooth"});
@@ -155,7 +155,7 @@ export default function HeroSection() {
                     initial={{opacity: 0, y: 16}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.5, delay: 0.4}}
-                    className="mt-10 text-base sm:text-lg text-gray-300 max-w-md mx-auto leading-relaxed font-normal"
+                    className={`mt-10 text-base sm:text-lg  max-w-md mx-auto leading-relaxed font-normal transition-colors ${btnHovered ? "text-gray-300" : "text-gray-400"}`}
                 >
                     Your dream home, in seconds
                 </motion.p>
