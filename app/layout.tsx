@@ -2,16 +2,8 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import {TTNormal, TT_C_Normal, TTMono} from "./fonts";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
     title: "InFlat – Swipe. Match. Move in!",
@@ -28,6 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 className={`${TTNormal.variable} ${TT_C_Normal.variable} ${TTMono.variable} antialiased`}
             >
                 {children}
+                <Analytics />
             </body>
         </html>
     );
