@@ -47,18 +47,18 @@ export default function HeroSection() {
                 // style={{ zIndex: -2 }}
             />
 
-            <div
-                className={`absolute inset-0 z-10 overflow-hidden opacity-0`}
-                style={{
-                    backgroundImage: "url(/textures/HK.png)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center bottom",
-                    backgroundSize: "auto 100%",
-                    filter: "brightness(0%) " +
-                        "blur(3.5px)" +
-                        "",
-                }}
-            />
+            {/*<div*/}
+            {/*    className={`absolute inset-0 z-10 overflow-hidden opacity-100`}*/}
+            {/*    style={{*/}
+            {/*        backgroundImage: "url(/textures/HK.png)",*/}
+            {/*        backgroundRepeat: "no-repeat",*/}
+            {/*        backgroundPosition: "center bottom",*/}
+            {/*        backgroundSize: "auto 100%",*/}
+            {/*        filter: "brightness(0%) " +*/}
+            {/*            "blur(3.5px)" +*/}
+            {/*            "",*/}
+            {/*    }}*/}
+            {/*/>*/}
 
             <div
                 className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
@@ -100,7 +100,7 @@ export default function HeroSection() {
                     initial={{opacity: 0, y: 16}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.5, delay: 0.25}}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 cursor-pointer"
                 >
                     <a
                         // href="#get-started"

@@ -2,6 +2,7 @@
 
 import React, {useState, useEffect} from "react"
 import {motion, AnimatePresence} from "framer-motion"
+import Image from "next/image";
 import {Menu, X} from "lucide-react"
 
 export default function Header() {
@@ -60,14 +61,21 @@ export default function Header() {
                         : "bg-transparent"
                 }`}
             >
-                <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto pl-6 pr-8 h-20 flex items-center justify-between">
                     <button
                         onClick={() => {
                             setMobileOpen(false);
                             scrollTo("none");
                         }}
-                        className="text-white font-bold text-lg tracking-tight cursor-pointer"
+                        className="flex items-center text-white font-bold text-lg tracking-tight cursor-pointer"
                     >
+                        <Image
+                            src="/InFlat.svg"
+                            alt={""}
+                            width={24}
+                            height={24}
+                            priority
+                        />
                         InFlat
                     </button>
                     {/* Desktop nav */}

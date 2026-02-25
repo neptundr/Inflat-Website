@@ -58,7 +58,7 @@ export default function ParticlesLayer({
 
             particles.push({
                 x: Math.random() * (width - size),
-                y: Math.random() * (height - size),
+                y: (Math.random() * (height - size)),
                 dx: (Math.random() - 0.5) * speed * 100, // px/sec
                 dy: (Math.random() - 0.5) * speed * 100, // px/sec
                 size,
