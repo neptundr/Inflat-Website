@@ -94,10 +94,10 @@ export default function CTASection() {
                         {/* Trust badges */}
                         <div
                             className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-12 text-white/25 text-sm font-normal">
-                            <span>★★★★★ 4.6 on TrustPilot </span>
-                            <span className="w-px h-3 bg-white/10 hidden sm:block"/>
+                            {/*<span>★★★★★ 4.6 on TrustPilot </span>*/}
+                            {/*<span className="w-px h-3 bg-white/10 hidden sm:block"/>*/}
                             <span>5K+ active users</span>
-                            <span className="w-px h-3 bg-white/10 hidden sm:block"/>
+                            <span className="w-px h-3 bg-white/10 block"/>
                             <span>Free to use</span>
                         </div>
                     </div>
